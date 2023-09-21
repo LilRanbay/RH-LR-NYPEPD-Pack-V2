@@ -1,0 +1,6 @@
+"DecalModulate"
+{
+	"$basetexture" "rh&lr/nypepd/props/libertyii_glass"
+	"$model" "1"
+	"$nocull" "1"
+}
