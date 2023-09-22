@@ -15,12 +15,12 @@ local SW = "S_WHITE"
 
 EMV.Siren = "lr_w_295HFSA6"
 EMV.Skin = "rh&lr/nypepd/cvpi10/cvpi_patrol"
-EMV.Color = Color(6,22,32)
+EMV.Color = Color(6,22,32) 
 
 EMV.SubMaterials = { 
 	["11"] = "rh&lr/glass/cvpi10/cvpi_glass_fs", 
 }
-
+ 
 EMV.Liveries = {
 	["PEPD Global"] = {
 		["PEPD Patrol White"] = "rh&lr/nypepd/cvpi10/cvpi_patrol",
@@ -31,7 +31,7 @@ EMV.Liveries = {
 EMV.BodyGroups = {
 	{ 0, 0 }, -- car
 	{ 1, 0 }, -- pushbar
-	{ 2, 4 }, -- grille
+	{ 2, 4 }, -- grille  
 	{ 3, 1 }, -- hubcaps
 	{ 4, 0 }, -- doortrim
 	{ 5, 1 }, -- rearfascia
@@ -348,8 +348,8 @@ EMV.Sequences = {
 			Preset_Components = {},
 			Lights = {
 				-- LIGHTBAR --
-				{ Vector( -14.5, -13.65, 73.6 ), Angle( 0, 90, 0 ), "takedown_vision" },
-				{ Vector( 14.5, -13.65, 73.6 ), Angle( 0, 90, 0 ), "takedown_vision" },
+				{ Vector( -15.63, -14.89, 70.45 ), Angle( 0, 90, 0 ), "takedown_edge" },
+				{ Vector( 15.63, -14.89, 70.45 ), Angle( 0, 90, 0 ), "takedown_edge" },
 			},
 			Disconnect = {}
 		},
@@ -362,7 +362,7 @@ EMV.Sequences = {
 			Preset_Components = {},
 			Lights = {
 				-- LIGHTBAR --
-				{ Vector( -14.5, -13.65, 73.6 ), Angle( 0, 180, 0 ), "takedown_vision" },
+				{ Vector( -27.72, -19.99, 70.45 ), Angle( 0, 180, 0 ), "takedown_edge" },
 			},
 			Disconnect = {}
 		},
@@ -375,7 +375,7 @@ EMV.Sequences = {
 			Preset_Components = {},
 			Lights = {
 				-- LIGHTBAR --
-				{ Vector( 14.5, -13.65, 73.6 ), Angle( 0, 0, 0 ), "takedown_vision" },
+				{ Vector( 27.72, -19.99, 70.45 ), Angle( 0, 0, 0 ), "takedown_edge" },
 			},
 			Disconnect = {}
 		},
@@ -383,7 +383,7 @@ EMV.Sequences = {
 }
 
 EMV.Lamps = {
-	["takedown_vision"] = {
+	["takedown_edge"] = {
 		Color = Color(230,220,190,255),
 		Texture = "effects/flashlight001",
 		Near = 110,
