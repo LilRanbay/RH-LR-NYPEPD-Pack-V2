@@ -34,22 +34,25 @@ COMPONENT.Sections = {
 
 COMPONENT.Patterns = {
 	["headlights"] = {
-		["off"] = { 
-			0 
-		},
+		["off"] = { 0 },
+		["off09"] = { 0 },
+		["off10"] = { 0 },
 		
-		["on"] = { 
-			1 
-		},
+		["on"] = { 1 },
+		["on09"] = { 1 },
+		["on10"] = { 1 },
 	},
 	["reverse"] = {
-		["off"] = {
-			0
-		},
-		["on"] = {
+		["off"] = { 0 },
+		["off09"] = { 0 },
+		["off10"] = { 0 },
+
+		["on"] = { 1 },
+		["on09"] = { 0 },
+		["on10"] = {
 			2,0,2,0,2,0,0,0,0,
 			3,0,3,0,3,0,0,0,0
-		},
+		}
 	}
 }
 
@@ -85,7 +88,7 @@ COMPONENT.Base = "NYPEPD CVPI Flashers"
 COMPONENT.Modes = {
 	Primary = {
 			M1 = {
-				["reverse"] = "on",
+				["reverse"] = "off",
 			},
 			M3 = {
 				["reverse"] = "on",

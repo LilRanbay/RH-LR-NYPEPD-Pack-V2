@@ -29,7 +29,7 @@ COMPONENT.DefaultColors = {
 	[2] = "BLUE",
 	[3] = "S_WHITE"
 }
-
+ 
 COMPONENT.SubMaterials = {[2] = "rh&lr/nypepd/props/edge_glass"}
 
 COMPONENT.Meta = {

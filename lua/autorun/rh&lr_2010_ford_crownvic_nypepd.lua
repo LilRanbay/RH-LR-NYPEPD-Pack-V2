@@ -15,7 +15,7 @@ local SW = "S_WHITE"
 
 EMV.Siren = "lr_w_295HFSA6"
 EMV.Skin = "rh&lr/nypepd/cvpi10/cvpi_patrol"
-EMV.Color = Color(6,22,32) 
+EMV.Color = Color(6,10,22) 
 
 EMV.SubMaterials = { 
 	["11"] = "rh&lr/glass/cvpi10/cvpi_glass_fs", 
@@ -31,8 +31,8 @@ EMV.Liveries = {
 EMV.BodyGroups = {
 	{ 0, 0 }, -- car
 	{ 1, 0 }, -- pushbar
-	{ 2, 4 }, -- grille  
-	{ 3, 1 }, -- hubcaps
+	{ 2, 0 }, -- grille
+	{ 3, 0 }, -- hubcaps
 	{ 4, 0 }, -- doortrim
 	{ 5, 1 }, -- rearfascia
 	{ 6, 0 }, -- reartrim
@@ -324,6 +324,7 @@ EMV.Auto = {
 		Scale = 1,
 		Pos = Vector( 0, 0, 0 ), 
 		Ang = Angle( 0, 0, 0),
+		Phase = "10"
 	}
 }
 
