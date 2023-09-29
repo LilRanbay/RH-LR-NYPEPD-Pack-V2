@@ -13,7 +13,7 @@ local W = "WHITE"
 local CW = "C_WHITE"
 local SW = "S_WHITE"
 
-EMV.Siren = "lr_w_295HFSA6"
+EMV.Siren = "lr_m_spectra"
 EMV.Skin = "rh&lr/nypepd/cvpi10/cvpi_patrol"
 EMV.Color = Color(6,10,22)
 
@@ -154,6 +154,14 @@ EMV.Props = {
     },
     -- CONTROLLER
     {
+        Model = "models/gandhi/props/spectra.mdl",
+        Scale = 1,
+        Pos = Vector(0, 10.35, 25.75),
+        Ang = Angle( 110, -90, 180),
+        RenderGroup = RENDERGROUP_OPAQUE,
+        RenderMode = RENDERMODE_NONE,
+    },
+    {
 		Model = "models/tdmcars/emergency/equipment/whelen_295slsa6.mdl",
 		Scale = 1,
 		Pos = Vector(0, 4.5, 24),
@@ -211,21 +219,20 @@ EMV.Auto = {
 		Pos = Vector( 0, -20, 66.45 ),
 		Ang = Angle( 0, 90, 0 )
 	},
-	-- GRILLE LIGHTS --
+	-- GRILLE LIGHTS -- 
 	{
-		ID = "NYPEPD Koito Flasher",
-		Scale = .8,
-		Pos = Vector( 12.5, 106.25, 29.5 ),
-		Ang = Angle( 0, -5, 0 ),
-		Phase = "A",
-		SubMaterials = {[0] = "sentry/props/koitoflasher/plastic_r"}
+		ID = "NYPEPD Federal Signal GS1",
+		Scale = 1,
+		Pos = Vector( -12, 107, 25.94 ),
+		Ang = Angle( 0, 90, 0 ),
+		Phase = "A"
 	},
 	{
-		ID = "NYPEPD Koito Flasher",
-		Scale = .8,
-		Pos = Vector( -12.5, 106.25, 29.5 ),
-		Ang = Angle( 0, 5, 0 ),
-		Phase = "C",
+		ID = "NYPEPD Federal Signal GS1",
+		Scale = 1,
+		Pos = Vector( 12, 107, 25.94 ),
+		Ang = Angle( 0, 90, 0 ),
+		Phase = "C"
 	},
 	-- FLASHERS --
 	{
@@ -263,8 +270,8 @@ EMV.Sequences = {
 			Preset_Components = {},
 			Lights = {
 				-- LIGHTBAR --
-				{ Vector( -15.63, -14.89, 70.45 ), Angle( 0, 90, 0 ), "takedown_edge" },
-				{ Vector( 15.63, -14.89, 70.45 ), Angle( 0, 90, 0 ), "takedown_edge" },
+				{ Vector( -1.99, -14.12, 71.43 ), Angle( 0, 90, 0 ), "takedown_heliobe" },
+				{ Vector( 1.99, -14.12, 71.43 ), Angle( 0, 90, 0 ), "takedown_heliobe" },
 			},
 			Disconnect = {}
 		},
@@ -277,7 +284,7 @@ EMV.Sequences = {
 			Preset_Components = {},
 			Lights = {
 				-- LIGHTBAR --
-				{ Vector( -27.72, -19.99, 70.45 ), Angle( 0, 180, 0 ), "takedown_edge" },
+				{ Vector( -25.02, -16.11, 71.43 ), Angle( 0, 180-45, 0 ), "takedown_heliobe" },
 			},
 			Disconnect = {}
 		},
@@ -290,7 +297,7 @@ EMV.Sequences = {
 			Preset_Components = {},
 			Lights = {
 				-- LIGHTBAR --
-				{ Vector( 27.72, -19.99, 70.45 ), Angle( 0, 0, 0 ), "takedown_edge" },
+				{ Vector( 25.02, -16.11, 71.43 ), Angle( 0, 45, 0 ), "takedown_heliobe" },
 			},
 			Disconnect = {}
 		},
@@ -298,7 +305,7 @@ EMV.Sequences = {
 }
 
 EMV.Lamps = {
-	["takedown_edge"] = {
+	["takedown_heliobe"] = {
 		Color = Color(230,220,190,255),
 		Texture = "effects/flashlight001",
 		Near = 110,
