@@ -51,39 +51,45 @@ COMPONENT.Patterns = {
 	["auto_intersector"] = {
 		["all"] = { 1 },
 		
-		["code6"] = { 1 },
-		["code6A"] = { 0 },
-		["code6B"] = { 0 },
-		["code6RA"] = { 0 },
-		["code6RB"] = { 0 },
+		["scene"] = { 1 },
+		["sceneA"] = { 0 },
+		["sceneB"] = { 0 },
 		
-		["code3"] = { 1 },
-		["code3A"] = { 
-			1,0,1,0,
-			0,0,0,0,
-		},
-		["code3B"] = { 
-			0,0,0,0,
-			1,0,1,0,
-		},
-		["code3RA"] = { 
-			1,0,1,0,0,0,0,0,
-			2,0,2,0,0,0,0,0,
-		},
-		["code3RB"] = { 
-			0,0,0,0,1,0,1,0,
-			0,0,0,0,2,0,2,0,
-		},
+		["response"] = { 1 },
+		["responseA"] = { 1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0 },
+		["responseB"] = { 0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,1 }
 	}
 }
 
 COMPONENT.Modes = {
 	Primary = {
-		M1 = { ["auto_intersector"] = "code6", },
-		M3 = { ["auto_intersector"] = "code3", },
+		M1 = { ["auto_intersector"] = "scene", },
+		M3 = { ["auto_intersector"] = "response", },
 	},
 	Auxiliary = {},
 	Illumination = {}
+}
+
+EMVU:AddAutoComponent( COMPONENT, name )
+
+local name = "NYPEPD SoundOff Intersector CVPI"
+
+local COMPONENT = {}
+
+COMPONENT.Base = "NYPEPD SoundOff Intersector"
+
+COMPONENT.Meta = {
+	soundoff_cir = {
+		AngleOffset = -90,
+		W = .7,
+		H = .7,
+		Sprite = "sprites/emv/circular_src",
+		WMult = 1.25,
+		Scale = 1,
+		NoLegacy = true,
+		DirAxis = "Up",
+		DirOffset = 90
+	},
 }
 
 EMVU:AddAutoComponent( COMPONENT, name )

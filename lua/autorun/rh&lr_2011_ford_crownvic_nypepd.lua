@@ -227,16 +227,35 @@ EMV.Auto = {
 		Scale = 1, 
 		Pos = Vector(-13, 108.3, 32.6),  
 		Ang = Angle( -4, 5, 0),
-		Color1 = "RED",
-		Phase = "B", 
+		Phase = "C"
 	},
 	{ 
 		ID = "NYPEPD Whelen Ion",    
 		Scale = 1,
 		Pos = Vector(13, 108.3, 32.6),  
 		Ang = Angle( 4, -5, 0),
-		Color1 = "RED",
+		Phase = "A"
+	},
+	-- CV INTERSECTORS --
+	{
+		ID = "NYPEPD SoundOff Intersector CVPI",
+		Scale = Vector(.35, .35, 1),
+		Pos = Vector(35.65, 103.55, 28.1), 
+		Ang = Angle( 180, -40, 0),
+		Color1 = "WHITE",
+		Phase = "B",
+		RenderGroup = RENDERGROUP_OPAQUE,        
+		RenderMode = RENDERMODE_NONE, 
+	},
+	{
+		ID = "NYPEPD SoundOff Intersector CVPI",
+		Scale = Vector(.35, .35, 1),
+		Pos = Vector(-35.65, 103.55, 28.1),
+		Ang = Angle( 180, 40, 0),
+		Color1 = "WHITE",
 		Phase = "A",
+		RenderGroup = RENDERGROUP_OPAQUE,
+		RenderMode = RENDERMODE_NONE, 
 	},
 	-- FLASHERS --
 	{
@@ -244,7 +263,16 @@ EMV.Auto = {
 		Scale = 1,
 		Pos = Vector( 0, 0, 0 ), 
 		Ang = Angle( 0, 0, 0),
-		Phase = "10"
+		Color1 = "WHITE",
+		Color2 = "WHITE",
+		Phase = "11"
+	},
+	{
+		ID = "NYPEPD CVPI Tail Flashers",
+		Scale = 1,
+		Pos = Vector( 0, 0, 0 ), 
+		Ang = Angle( 0, 90, 0),
+		Phase = "11"
 	}
 }
 
@@ -263,53 +291,57 @@ EMV.Sequences = {
 			Name = "TKDN",
 			Icon = "takedown",
 			Stage = "T",
-			Components = {},
-			BG_Components = {},
+			Components = {},  
+			BG_Components = {}, 
 			Preset_Components = {},
-			Lights = {
+			Lights = { 
 				-- LIGHTBAR --
-				{ Vector( -15.63, -14.89, 70.45 ), Angle( 0, 90, 0 ), "takedown_edge" },
-				{ Vector( 15.63, -14.89, 70.45 ), Angle( 0, 90, 0 ), "takedown_edge" },
-			},
-			Disconnect = {}
-		},        
-		{
-			Name = "LEFT",
-			Icon = "alley-left",
-			Stage = "L",
-			Components = {},
-			BG_Components = {},
-			Preset_Components = {},
-			Lights = {
-				-- LIGHTBAR --
-				{ Vector( -27.72, -19.99, 70.45 ), Angle( 0, 180, 0 ), "takedown_edge" },
+				{ Vector( 14.6, -12.76, 70.47 ), Angle( 0, 90, 0 ), "freedom_tri" },
+				{ Vector( -14.6, -12.76, 70.47 ), Angle( 0, 90, 0 ), "freedom_tri" },
+				{ Vector( 17.01, -12.76, 70.47 ), Angle( 0, 90, 0 ), "freedom_tri" },
+				{ Vector( -17.01, -12.76, 70.47 ), Angle( 0, 90, 0 ), "freedom_tri" },
 			},
 			Disconnect = {}
 		},
 		{
-			Name = "RIGHT",
-			Icon = "alley-right",
-			Stage = "R",     
+			Name = "LEFT",
+			Icon = "alley-left",
+			Stage = "L", 
 			Components = {},
 			BG_Components = {},
-			Preset_Components = {},
-			Lights = {
-				-- LIGHTBAR --
-				{ Vector( 27.72, -19.99, 70.45 ), Angle( 0, 0, 0 ), "takedown_edge" },
+			Preset_Components = {},  
+			Lights = { 
+				-- LIGHTBAR --   
+				{ Vector( -28.81, -20.01, 69.75 ), Angle(0, 180, 0 ), "freedom_tri" },
+				{ Vector( -28.81, -20.01, 71.45 ), Angle(0, 180, 0 ), "freedom_tri" },
 			},
-			Disconnect = {}
+			Disconnect = {}  
+		},
+		{
+			Name = "RIGHT",
+			Icon = "alley-right", 
+			Stage = "R",
+			Components = {}, 
+			BG_Components = {},  
+			Preset_Components = {}, 
+			Lights = {  
+				-- LIGHTBAR --      
+				{ Vector( 28.81, -20.01, 69.75 ), Angle(0, 0, 0 ), "freedom_tri" },
+				{ Vector( 28.81, -20.01, 71.45 ), Angle(0, 0, 0 ), "freedom_tri" },
+			},
+			Disconnect = {}    
 		},
 	}
 }
 
 EMV.Lamps = {
-	["takedown_edge"] = {
-		Color = Color(230,220,190,255),
+	["freedom_tri"] = {
+		Color = Color(215,225,255,255),
 		Texture = "effects/flashlight001",
 		Near = 110,
-		FOV = 100,
-		Distance = 900,
-	}
+		FOV = 90,
+		Distance = 800,
+	},
 }
  
 local V = { 
